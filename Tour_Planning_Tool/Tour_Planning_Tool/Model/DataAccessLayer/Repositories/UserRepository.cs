@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +8,15 @@ using Tour_Planning_Tool.DataLayer.Models;
 
 namespace Tour_Planning_Tool.Model.DataAccessLayer.Repositories
 {
-    internal class UserRepository : IRepository<User>
+    public class UserRepository : IRepository<User>
     {
+        private NpgsqlConnection npgsqlConnection;
+
+        public UserRepository(NpgsqlConnection npgsqlConnection)
+        {
+            this.npgsqlConnection = npgsqlConnection;
+        }
+
         public User? Add(User obj)
         {
             throw new NotImplementedException();

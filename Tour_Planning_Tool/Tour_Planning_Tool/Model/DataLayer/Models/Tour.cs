@@ -8,7 +8,7 @@ using Tour_Planning_Tool.DataLayer.Models.MapQuest;
 namespace Tour_Planning_Tool.DataLayer.Models
 {
     public enum ETransportType { CAR, TRAIN, SHIP, AIRPLANE, FOOT, BICYCLE }
-    internal class Tour
+    public class Tour
     {
         public string Name { get; set; }
         public string Description { get; set; }

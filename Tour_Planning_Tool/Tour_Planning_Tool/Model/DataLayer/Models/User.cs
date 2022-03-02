@@ -7,7 +7,7 @@ using Tour_Planning_Tool.DataLayer.Models.MapQuest;
 
 namespace Tour_Planning_Tool.DataLayer.Models
 {
-    internal class User
+    public class User
     {
         public Guid Id { get; set; }
         public string Username { get; set; }

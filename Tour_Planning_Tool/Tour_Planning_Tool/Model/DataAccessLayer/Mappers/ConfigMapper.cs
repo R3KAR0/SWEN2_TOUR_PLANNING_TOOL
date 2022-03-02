@@ -9,13 +9,14 @@ namespace Tour_Planning_Tool.DataAccessLayer.Mappers
 {
     public class ConfigMapper
     {
-        public ConfigMapper(string connectionString, string dBUser, string dBPassword, string postgresDoubleEntry, string mapQuestKey)
+        public ConfigMapper(string connectionString, string dBUser, string dBPassword, string postgresDoubleEntry, string mapQuestKey, string mapQuestSecret)
         {
             ConnectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString));
             DBUser = dBUser ?? throw new ArgumentNullException(nameof(dBUser));
             DBPassword = dBPassword ?? throw new ArgumentNullException(nameof(dBPassword));
             PostgresDoubleEntry = postgresDoubleEntry ?? throw new ArgumentNullException(nameof(postgresDoubleEntry));
             MapQuestKey = mapQuestKey ?? throw new ArgumentNullException(nameof(mapQuestKey));
+            MapQuestSecret = mapQuestSecret ?? throw new ArgumentNullException(nameof(mapQuestSecret));
         }
 
         [JsonPropertyName("connectionString")]

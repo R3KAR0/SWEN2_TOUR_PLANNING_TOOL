@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tour_Planning_Tool.DataLayer.Models.MapQuest
 {
-    internal class Route
+    public class Route
     {
 
     }

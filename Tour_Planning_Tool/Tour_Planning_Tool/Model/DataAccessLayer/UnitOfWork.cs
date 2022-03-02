@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tour_Planning_Tool.Model.DataAccessLayer.Repositories;
 
 namespace Tour_Planning_Tool.Model.DataAccessLayer
 {
@@ -18,46 +19,34 @@ namespace Tour_Planning_Tool.Model.DataAccessLayer
 
 
         #region Repository Declarations
-        /*
-        private UserRepository? userRepository = null;
-        private TokenRepository? tokenRepository = null;
-        private PackageRepository? packageRepository = null;
-        private CardRepository? cardRepository = null;
-        private DeckRepository? deckRepository = null;
-        private DeckCardRepository? deckCardRepository = null;
-        private BattleResultsRepository? statisticRepository = null;
-        private UserSelectedDeckRepository? userSelectedDeckRepository = null;
-        private TradeOfferRepository? tradeOfferRepository = null;
-        private SellingOfferRepository? sellingOfferRepository = null;
-        */
 
-        #endregion 
+        private TourRepository? tourRepository = null;
+
+
+        #endregion
 
         #region RepositoryGetters
-        /*
-        public UserRepository UserRepository()
+        public TourRepository TourRepository()
         {
-            if (userRepository == null)
+            if (tourRepository == null)
             {
-                userRepository = new UserRepository(npgsqlConnection);
+                tourRepository = new TourRepository(npgsqlConnection);
             }
-            return userRepository;
+            return tourRepository;
         }
-
-        */
         #endregion
-        
+
 
         public UnitOfWork()
         {
-            //var mapper = Program.GetConfigMapper();
-            //if (mapper == null) throw new NullReferenceException();
+            var mapper = MainWindow.GetConfigMapper();
+            if (mapper == null) throw new NullReferenceException();
 
-            //connString = mapper.ConnectionString;
+            connString = mapper.ConnectionString;
 
-            //npgsqlConnection = new NpgsqlConnection(connString);
-            //npgsqlConnection.Open();
-            //CreateTransaction();
+            npgsqlConnection = new NpgsqlConnection(connString);
+            npgsqlConnection.Open();
+            CreateTransaction();
         }
 
         protected virtual void Dispose(bool disposing)

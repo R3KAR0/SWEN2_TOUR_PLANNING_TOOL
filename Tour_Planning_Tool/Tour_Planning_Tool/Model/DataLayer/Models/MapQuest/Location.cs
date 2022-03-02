@@ -17,7 +17,7 @@ namespace Tour_Planning_Tool.DataLayer.Models.MapQuest
       };
 
     //Mapper class for MapQuest Locations
-    internal class Location
+    public class Location
     {
         public string Street { get; set; }
         public string AdminArea6 { get; set; }

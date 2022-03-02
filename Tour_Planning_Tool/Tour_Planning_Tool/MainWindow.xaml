@@ -7,31 +7,31 @@
         mc:Ignorable="d"
         Title="MainWindow" MinWidth="500" MinHeight="300" Height="600" Width="800" ResizeMode="CanResize">
     <DockPanel>
-        <Menu DockPanel.Dock="Top" FontSize="12">
-            <MenuItem Header="_File">
+        <Menu DockPanel.Dock="Top" FontSize="14">
+            <MenuItem Header="File">
                 <MenuItem Header="WHAT SHOULD HERE BE ADDED?" />
             </MenuItem>
-            <MenuItem Header="_Edit">
+            <MenuItem Header="Edit">
                 <MenuItem Header="Add Tour" />
                 <MenuItem Header="Modify Tour" />
                 <MenuItem Header="Delete Tour" />
             </MenuItem>
-            <MenuItem Header="_Report">
+            <MenuItem Header="Report">
                 <MenuItem Header="_Create Report Of Selected Tour" />
                 <MenuItem Header="_Create Summarized Report" />
             </MenuItem>
-            <MenuItem Header="_Options">
+            <MenuItem Header="Options">
                 <MenuItem Header="Change application settings" />
             </MenuItem>
-            <MenuItem Header="_Help" />
+            <MenuItem Header="Help" />
         </Menu>
         <Grid DockPanel.Dock="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.8*" />
-                <ColumnDefinition Width="0.2*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <TextBox Text="Search" Grid.Column="0" Name="SearchBar"/>
-            <Button Content="Search [MagnifyPicture]" Grid.Column="1" Name="SearchButton"/>
+            <TextBox Text="WATERMARK GOES HERE" Grid.Column="0"/>
+            <Button Content="Search" Grid.Column="1" Padding="5, 0"/>
         </Grid>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -42,31 +42,32 @@
             <DockPanel Grid.Column="0">
                 <Label Content="Tours" DockPanel.Dock="Top" HorizontalAlignment="Center" />
                 <ListBox>
-                    <ListBoxItem Content="BINDING ON LIST OF TOURS" />
+                    <ListBoxItem Content="Placeholder" />
                 </ListBox>
             </DockPanel>
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"></GridSplitter>
             <Grid Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="5" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <DockPanel Grid.Row="0">
-                    <Label Content="BINDING ON TOUR'S TITLE" DockPanel.Dock="Top" HorizontalAlignment="Center"/>
+                    <Label Content="Title: Tour 1" DockPanel.Dock="Top" HorizontalAlignment="Center"/>
                     <Grid DockPanel.Dock="Top">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Slider></Slider>
+                        <Slider Minimum="0" Maximum="1" TickFrequency="1" IsSnapToTickEnabled="True" Width="50"></Slider>
+                        <!--<Button Grid.Column="0" Content="Route" />
+                        <Button Grid.Column="1" Content="Description" /> -->
                     </Grid>
                     <ScrollViewer HorizontalScrollBarVisibility="Auto">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="318*" />
-                                <ColumnDefinition Width="361*"/>
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -78,11 +79,19 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Content="From:" />
+                            <Label Grid.Column="0" Grid.Row="1" Content="To:" />
+                            <Label Grid.Column="0" Grid.Row="2" Content="Transport Type:" />
+                            <Label Grid.Column="0" Grid.Row="3" Content="Tour Distance:" />
+                            <Label Grid.Column="0" Grid.Row="4" Content="Estimated Time:" />
+                            <Label Grid.Column="0" Grid.Row="5" Content="Rating:" />
+                            <!--<Image Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" Width="500" /> -->
                         </Grid>
                     </ScrollViewer>
                 </DockPanel>
+                <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" />
                 <DockPanel Grid.Row="2">
-                    <Label Content="Logs" DockPanel.Dock="Top" HorizontalAlignment="Center"/>
+                    <Label Content="Logs" DockPanel.Dock="Top" HorizontalAlignment="Center" />
                     <DataGrid AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Date" Width="0.1*" MinWidth="80">
